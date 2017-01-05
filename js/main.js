@@ -18,3 +18,18 @@
 // console.log(user200)
 
 //============================================================
+	// == prototyoe objects ===
+
+// User.prototype.emailDomain = '@facebook.com'
+
+// console.log(user200.emailDomain)
+
+// User.prototype.getEmailaddress = function() {
+// 	return this.firstName + this.lastName + this.emailDomain
+// }
+
+// console.log(user1.getEmailaddress())
+
+//============================================================
+//============================================================
+//============================================================
