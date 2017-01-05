@@ -47,3 +47,14 @@ function Node(value, next, prev) {
 	this.next = next;
 	this.prev = prev;
 }
+// adding a head node through the prototype
+LinkedList.prototype.addToHead = function(value) {
+	var newNode = new Node(value,this.head, null)
+	//checking if the list is NOT EMPTY
+	if(this.head) {
+		this.head.prev = newNode;
+	} else {
+		this.tail = newNode;
+	}
+	this.head = newNode;
+}
