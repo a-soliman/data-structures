@@ -87,3 +87,20 @@ LinkedList.prototype.removeHead = function() {
 		}
 	} return val;
 }
+// Removing the tail and returning its value
+LinkedList.prototype.removeTail = function() {
+	//chck if the list is empty
+	if(!this.tail) {
+		return null;
+	} else {
+		var val = this.tail.value;
+		this.tail = this.tail.prev;
+
+		//check if there are Nodes in the lisr
+		if(this.tail) {
+			this.tail.next = null;
+		} else {
+			this.head  = null;
+		}
+	} return val;
+}
