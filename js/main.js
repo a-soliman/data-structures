@@ -120,3 +120,27 @@ LinkedList.prototype.search = function(searchValue) {
 	}
 	return null;
 }
+
+LinkedList.prototype.indexOf = function(value) {
+	if(!this.head) {
+		return null;
+	} else {
+		var result = [];
+		var currentNode = this.head;
+		var currentIndex = 0;
+
+		while(currentNode) {
+			if(currentNode.value === value) {
+				result.push(currentIndex)
+			}
+			currentNode = currentNode.next;
+			currentIndex++;
+			
+		}
+	}
+	if(result.length !== 0) {
+		return result
+	} else {
+		return ("Didn't Find your Value!")
+	}
+}
