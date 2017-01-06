@@ -144,3 +144,15 @@ LinkedList.prototype.indexOf = function(value) {
 		return ("Didn't Find your Value!")
 	}
 }
+
+var myll = new LinkedList()
+
+myll.addToHead(123)
+myll.addToHead('world')
+myll.addToHead('hello')
+
+myll.addToTail(19)
+myll.addToTail('world')
+myll.addToTail(20)
+
+console.log(myll.indexOf('world'))
