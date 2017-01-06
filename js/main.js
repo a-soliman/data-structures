@@ -104,3 +104,19 @@ LinkedList.prototype.removeTail = function() {
 		}
 	} return val;
 }
+
+// Search method the linked-list
+LinkedList.prototype.search = function(searchValue) {
+	//specifing a start point for the earch
+	var currentNode = this.head;
+
+	//traveling from Node to Node
+	while(currentNode) {
+		if(currentNode.value === searchValue) {
+			return currentNode.value;
+		}
+
+		currentNode = currentNode.next;
+	}
+	return null;
+}
