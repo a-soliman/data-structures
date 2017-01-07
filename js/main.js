@@ -216,3 +216,32 @@ BST.prototype.insert = function(value) {
 
 	}
 };
+
+// CONTAINES method => search through
+BST.prototype.contains = function(value) {
+	// chck if the value matches the value of the current node
+	if(value === this.value) {
+		return true;
+	}
+	//If it's not
+	else {
+		// check if the value is less or greather than the nodes value
+		if(value < this.value) {
+			if(!this.left) {
+				return false;
+			}
+			else {
+				return this.left.contains(value);
+			}
+		}
+		//if its greater
+		else if(value > this.value) {
+			if(!this.right) {
+				return false;
+			}
+			else {
+				return this.right.contains(value)
+			}
+		}
+	}
+}
