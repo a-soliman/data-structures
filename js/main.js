@@ -190,3 +190,29 @@ function BST(value) {
 	this.left = null;
 	this.right = null;
 }
+
+// an insert method
+BST.prototype.insert = function(value) {
+	//check if the valuse is less than the parent Node => move to LEFT
+	if(value <= this.value) {
+
+		//check if the LEFT POS is free 
+		if(!this.left) {
+			this.left = new BST(value); 
+		}
+		else {
+			this.left.insert(value);
+		}
+	}
+	//Oherwise move to the right side
+	else if(value > this.value) {
+		// check if the RIGHT side is free
+		if(!this.right) {
+			this.right = new BST(value)
+		}
+		else {
+			this.right.insert(value);
+		}
+
+	}
+};
