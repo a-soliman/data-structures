@@ -314,3 +314,19 @@ bst.insert(35);
 bst.insert(85);
 bst.insert(105);
 bst.insert(10);
+
+// bst.depthFirstTraversal(log, 'post-order')
+
+function log(value) {
+	console.log(value)
+}
+
+function log2(node) {
+	console.log(node.value)
+}
+
+// bst.breadthFirstTraversal(log2);
+console.log('MIN : ' , bst.getMinVal())
+console.log('MAX : ' , bst.getMaxVal())
+
+*/
