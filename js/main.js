@@ -290,3 +290,13 @@ BST.prototype.getMinVal = function() {
 		return this.value;
 	}
 }
+
+// getMaxVal method
+BST.prototype.getMaxVal = function() {
+	if(this.right) {
+		return this.right.getMaxVal();
+	}
+	else {
+		return this.value;
+	}
+} 
