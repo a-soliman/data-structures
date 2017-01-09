@@ -410,3 +410,16 @@ HashTable.prototype.get = function(key) {
 		return null; 
 	}
 }
+// retriveAll method to retrive all the information stored in the Hash table
+HashTable.prototype.retriveAll = function() {
+	var allNodes = [];
+
+	for(var i = 0; i < this.numBucketes; i++) {
+		var currentNode = this.buckets[i]
+		while(currentNode) {
+			allNodes.push(currentNode)
+			currentNode = currentNode.next;
+		}
+	}
+	return allNodes;
+}
