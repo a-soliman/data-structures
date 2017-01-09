@@ -348,3 +348,13 @@ console.log('MAX : ' , bst.getMaxVal())
  	this.value = value;
  	this.next = next || null;
  }
+
+ //Hsh method ((takes a letter and hashes it into a number))
+HashTable.prototype.hash = function(key) {
+	var total = 0;
+	for(var i = 0; i < key.length; i++) {
+		total += key.charCodeAt(i);
+	}
+	var bucket = total % this.numBucketes;
+	return bucket;
+}
