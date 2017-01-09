@@ -389,3 +389,24 @@ HashTable.prototype.insert = function(key, value) {
     currentNode.next = new HashNode(key, value)
   }
 }
+//get method to retive information:
+HashTable.prototype.get = function(key) {
+	//hash the key into a number
+	var index = this.hash(key);
+
+	//check if the bucket is empty
+	if(!this.buckets[index]) {
+		return null;
+	}
+	else {
+		var currentNode = this.buckets[index];
+
+		while(currentNode){
+			if(currentNode.key === key) {
+				return currentNode;
+			}
+			currentNode = currentNode.next;
+		}
+		return null; 
+	}
+}
