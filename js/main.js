@@ -372,3 +372,20 @@ HashTable.prototype.insert = function(key, value) {
   else if(this.buckets[index].key === key) {
     this.buckets[index].value = value;
   }
+    //if non of the above
+  else {
+    var currentNode = this.buckets[index];
+    
+    while(currentNode.next) {
+      //check if any of the existing nodes in the ckain have the same key => if yes then change the value
+      if(currentNode.next.key === key) {
+        currentNode.next.value = value;
+        return;
+      }
+      //if not then contenu looping
+      currentNode = currentNode.next;
+    }
+    //if you didnt find the placethe new node at the very end of the chain inside the bucket
+    currentNode.next = new HashNode(key, value)
+  }
+}
