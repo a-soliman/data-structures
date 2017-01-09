@@ -33,7 +33,7 @@
 //============================================================
 //============================================================
 //============================================================
-// === Linked List ===
+		// === Linked List ===
 		//______________________
 /*
 // linked list constructor function
@@ -41,12 +41,14 @@ function LinkedList() {
 	this.head = null;
 	this.tail = null;
 }
+
 // Node constructor function
 function Node(value, next, prev) {
 	this.value = value;
 	this.next = next;
 	this.prev = prev;
 }
+
 // adding a head node through the prototype
 LinkedList.prototype.addToHead = function(value) {
 	var newNode = new Node(value,this.head, null)
@@ -58,6 +60,7 @@ LinkedList.prototype.addToHead = function(value) {
 	}
 	this.head = newNode;
 }
+
 // adding a tail node through the prototype
 LinkedList.prototype.addToTail = function(value) {
 	var newNode = new Node(value, null, this.tail)
@@ -69,6 +72,7 @@ LinkedList.prototype.addToTail = function(value) {
 	}
 	this.tail = newNode
 }
+
 // Removing the head and returning it's value
 LinkedList.prototype.removeHead = function() {
 	//check if the list is empty
@@ -87,6 +91,7 @@ LinkedList.prototype.removeHead = function() {
 		}
 	} return val;
 }
+
 // Removing the tail and returning its value
 LinkedList.prototype.removeTail = function() {
 	//chck if the list is empty
@@ -105,7 +110,7 @@ LinkedList.prototype.removeTail = function() {
 	} return val;
 }
 
-// Search method the linked-list
+// Search the linked-list
 LinkedList.prototype.search = function(searchValue) {
 	//specifing a start point for the earch
 	var currentNode = this.head;
@@ -144,6 +149,8 @@ LinkedList.prototype.indexOf = function(value) {
 		return ("Didn't Find your Value!")
 	}
 }
+
+
 
 var myll = new LinkedList()
 
@@ -245,6 +252,7 @@ BST.prototype.contains = function(value) {
 		}
 	}
 }
+
 // depthFirstTraversal Method
 BST.prototype.depthFirstTraversal = function(iteratorFunc, order) {
 	if(order === 'pre-order') {
@@ -266,6 +274,7 @@ BST.prototype.depthFirstTraversal = function(iteratorFunc, order) {
 	}
 	
 }
+
 //breadthFirstTraversal method
 BST.prototype.breadthFirstTraversal = function(iteratorFunc) {
 	var queue  = [this];
@@ -281,6 +290,7 @@ BST.prototype.breadthFirstTraversal = function(iteratorFunc) {
 		}
 	}
 }
+
 // getMinVal method
 BST.prototype.getMinVal = function() {
 	if(this.left) {
@@ -300,6 +310,8 @@ BST.prototype.getMaxVal = function() {
 		return this.value;
 	}
 } 
+
+
 var bst = new BST(50);
 
 
@@ -330,6 +342,7 @@ console.log('MIN : ' , bst.getMinVal())
 console.log('MAX : ' , bst.getMaxVal())
 
 */
+
 // //_______________________________________________________________________
 //_______________________________________________________________________
 //_______________________________________________________________________
@@ -349,7 +362,7 @@ console.log('MAX : ' , bst.getMaxVal())
  	this.next = next || null;
  }
 
- //Hsh method ((takes a letter and hashes it into a number))
+//Hsh method ((takes a letter and hashes it into a number))
 HashTable.prototype.hash = function(key) {
 	var total = 0;
 	for(var i = 0; i < key.length; i++) {
@@ -372,7 +385,7 @@ HashTable.prototype.insert = function(key, value) {
   else if(this.buckets[index].key === key) {
     this.buckets[index].value = value;
   }
-    //if non of the above
+  //if non of the above
   else {
     var currentNode = this.buckets[index];
     
@@ -389,6 +402,7 @@ HashTable.prototype.insert = function(key, value) {
     currentNode.next = new HashNode(key, value)
   }
 }
+
 //get method to retive information:
 HashTable.prototype.get = function(key) {
 	//hash the key into a number
@@ -410,6 +424,7 @@ HashTable.prototype.get = function(key) {
 		return null; 
 	}
 }
+
 // retriveAll method to retrive all the information stored in the Hash table
 HashTable.prototype.retriveAll = function() {
 	var allNodes = [];
@@ -423,6 +438,7 @@ HashTable.prototype.retriveAll = function() {
 	}
 	return allNodes;
 }
+
  var myHT = new HashTable(30);
  myHT.insert('Dean', 'dean@gmail.com')
  myHT.insert('Megan', 'megan@gmail.com')
