@@ -343,4 +343,8 @@ console.log('MAX : ' , bst.getMaxVal())
  	this.numBucketes = this.buckets.length;
  }
 
- 
+ function HashNode(key, value, next) {
+ 	this.key = key;
+ 	this.value = value;
+ 	this.next = next || null;
+ }
