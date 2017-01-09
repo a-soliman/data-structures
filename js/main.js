@@ -358,3 +358,17 @@ HashTable.prototype.hash = function(key) {
 	var bucket = total % this.numBucketes;
 	return bucket;
 }
+
+// insert method to insert a new bucket or change the value of an existing one
+HashTable.prototype.insert = function(key, value) {
+  //hash the key to number so the bucket gets desided
+  var index = this.hash(key);
+  
+  //if there the bucket is free then place it there
+  if(!this.buckets[index]) {
+    this.buckets[index] = new HashNode(key, value);
+  }
+  // check if the first position is equal to the new node's key => if yes then change the value
+  else if(this.buckets[index].key === key) {
+    this.buckets[index].value = value;
+  }
